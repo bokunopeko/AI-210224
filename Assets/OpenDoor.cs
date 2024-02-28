@@ -5,16 +5,16 @@ using UnityEngine;
 public class OpenDoor : MonoBehaviour
 {
     // delta mean the change of or different between 2 number
-    
+
     public Vector3 deltaPosition;
-    public float speed ;
-    public float waitTime ;
+    public float speed;
+    public float waitTime;
 
     private Vector3 _closedPosition;
     private Vector3 _openPosition;
 
 
-    
+
     void Start()
     {
         //when game start, the door will be at closed position
@@ -23,21 +23,12 @@ public class OpenDoor : MonoBehaviour
 
     }
 
-    
-    void Update()
+    public void OpenTheDoor()
     {
-        //Time.time is how many second have the scene started
-        if(Time.time > waitTime)
-          
-        {
-            //transform.position is the current position of the game
-            //delta time is amount of second between frame 
-            transform.position = Vector3.MoveTowards(transform.position, _openPosition, speed * Time.deltaTime);
-        }
-
-
-        
-       
-
+        //transform.position is the current position of the game
+        //delta time is amount of second between frame 
+        transform.position = Vector3.MoveTowards(transform.position, _openPosition, speed * Time.deltaTime);
     }
 }
+  
+

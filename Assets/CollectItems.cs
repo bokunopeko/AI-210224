@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CollectItems : MonoBehaviour
 {
-    public int collectedbject = 0;
+    public int collectedObject = 0;
+
+    public OpenDoor door;
 
     void Start()
     {
@@ -15,10 +17,13 @@ public class CollectItems : MonoBehaviour
     }
 
     
-    void Update()
+    private void Update()
     {
         
-
+        if(collectedObject >= 3)
+        {
+            door.OpenTheDoor();
+        }
 
 
     }
@@ -28,7 +33,7 @@ public class CollectItems : MonoBehaviour
     {
         if(collision.gameObject.tag == "Collectable")
         {
-            collectedbject++;
+            collectedObject++;
             Destroy(collision.gameObject);
         }
         //it will show what object you hit
