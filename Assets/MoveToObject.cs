@@ -6,7 +6,8 @@ using UnityEngine.AI;
 public class MoveToObject : MonoBehaviour
 {
     private NavMeshAgent agent;
-    public GameObject followObject;
+    public GameObject followObject1;
+    public GameObject followObject2;
 
 
 
@@ -21,7 +22,7 @@ public class MoveToObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.destination = followObject.transform.position;
+        agent.destination = followObject1.transform.position;
 
     }
 }
